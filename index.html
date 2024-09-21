@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loveyou</title>
+
+
+
+
+
+</head>
+<link rel="stylesheet" href="index.css">
+
+<div class="painel">
+    <h1>Bianca Beatriz Cavalcanti Barbosa</h1>
+    <h2>Would you like to date me?</h2>
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd252emhhZnF3bXVycXZucWtvd3loNThsYW5oOHo4dnphbmlpbDMyMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kGcgQcvdOAymvha2ZN/giphy.webp" alt="">
+
+    <a href="/intex.html"><button id="sim">Sim!</button></a>
+
+    <button onmouseover="fuja()" id="nao">Não!</button>
+
+    
+
+ 
+   
+    
+
+</div>
+
+<script>
+    function fuja(){
+        var botaoNao = document.getElementById("nao")
+
+        var larguraJanela = window.innerWidth;
+        var alturaJanela = window.innerHeight;
+
+        var maxX = larguraJanela - botaoNao.offsetWidth;
+        var maxY = alturaJanela - botaoNao.offsetHeight;
+
+        var aleatorioX = Math.floor(Math.random() * maxX);
+        var aleatorioY = Math.floor(Math.random() * maxY);
+
+        botaoNao.style.left = aleatorioX + "px";
+        botaoNao.style.top = aleatorioY + "px";
+
+
+    }
+</script>
+
+
+
+
+<body>
+
+
+
+
+
+    
+</body>
+
+
+
+
+</html>

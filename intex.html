@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loveyou</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9470b1658a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button class="btn" onclick="sim()">Primeiro esse</button>
+    <br>
+    <a href="https://forms.gle/2eHYnnERTMWPS28UA"><button>Segundo esse</button></a>
+
+<div class="container">
+    <div class="music-player">
+        <nav>
+            <div class="circle">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+        </nav>
+        <nav>
+            <div class="circle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <img src="anosluz.jpg" class="song-img">
+        <h1>Anos Luz</h1>
+        <p>Matue</p>
+
+        <audio id="song">
+            <source src="Matuê - Anos Luz .mp3" type="audio/mpeg" >
+        </audio>
+        <input type="range" value="0" id="progress">
+
+        <div class="controls">
+            <div><i class="fa-solid fa-backward"></i></div>
+            <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+            <div><i class="fa-solid fa-forward"></i></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    function sim() {
+            alert("Todas as vezes eu só falo o quanto eu te amo e o quanto você é importante pra mim, vou fazer diferente dessa vez");
+            alert("Na primeira vez que nos envolvemos este ano, eu agi de forma infantil e não te tratei da maneira que você merecia. Quando você foi embora, entendi que realmente te amo, até porque é na perda que aprendemos o verdadeiro valor da pessoa.");
+            alert(" Eu acho que você pode não acreditar, mas é a pura verdade. Sem você na minha vida, eu fico mais triste, e com você, eu pareço outra pessoa. Enfim, senti muito a sua falta. ");
+            alert(" Acredito que não sou a pessoa 100% perfeita para você, mas desta vez eu vou dar o meu máximo por você e vou fazer de tudo para que a gente dê certo. Kkkkkk agora vai ser o que você já está acostumada a ouvir eu te amo muito, eu não sei o que seria de mim sem você.");
+            alert(" Quando me envolvi com você de novo, coloquei na minha cabeça que não iria me apaixonar, mas não consegui. Cada detalhe seu, cada sorriso, cada olhar me fez me apaixonar por você. ");
+            alert(" Eu amo você. Eu amo seus olhos, amo seu sorriso, amo seu cabelo, amo sua boca, amo suas bochechas, amo seus abraços. Eu amo quando você é fofa, amo o jeito que você fica irritada, amo quando fico te olhando e você fica toda sem jeito, e amo como você manda em mim. ");
+            
+        }
+
+    let progress = document.getElementById("progress");
+    let song = document.getElementById("song");
+    let ctrlIcon = document.getElementById("ctrlIcon");
+
+    song.onloadeddata = function() {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+
+    }
+function playPause() {
+    if(ctrlIcon.classList.contains("fa-pause")){
+        song.pause();
+        ctrlIcon.classList.remove("fa-pause");
+        ctrlIcon.classList.add("fa-play");
+    }
+    else{
+        song.play();
+        ctrlIcon.classList.add("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+    }
+}
+
+if(song.play()){
+    setInterval(()=>{
+        progress.value = song.currentTime;
+    },500);
+}
+
+progress.onchange = function(){
+    song.play();
+    song.currentTime = progress.value;
+    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play");
+}
+
+</script>
+</body>
+</html>
